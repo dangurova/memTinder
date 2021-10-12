@@ -1,21 +1,20 @@
 <template>
   <div class="login">
-    <img class="logo" src="http://i.imgur.com/4WlfWmX.png" alt="logo">
-    <h1 class="title" > Welcome to Memes Tinder! </h1>
-    <h1 class="descriptions"> Rate memes and find new friends! </h1>
-    <input class="field-by-login" placeholder=" enter login from instagram..." v-model.trim="login"/>
-    <button class="save-button" @click="$emit('set:login', login)"> Go </button>
+    <h1 class="descriptions"> Сhoose your favorite memes! </h1>
+    <img class="mem" src="../assets/memesList/1.jpeg" alt="mem" >
+    <div class="icon-container">
+        <i class="fas fa-times"></i>
+        <i class="fas fa-check" size="lg"></i>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'LoginPage',
-  data: function() {
-    return {
-      login: '',
-    }
-  },
+  props: {
+    msg: String
+  }
 }
 </script>
 
@@ -59,41 +58,25 @@ a {
         linear-gradient(to top right, #5e0fd4, transparent);
     background-blend-mode: screen;
 }
-.logo {
+.mem {
   width: auto;
-  height: 120px;
-  padding-top: 100px;
-  padding-bottom: 30px;
+  height: 320px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+}
+.icon-container {
+    display: flex;
+    justify-content: center;
+}
+.fa-check {
+    margin-left:100px;
+}
+.fas {
+    width: 20px;
 }
 .descriptions {
   padding-top: 30px;
-}
-
-.field-by-login {
-  width: 300px;
-  height: 25px;
-  border-radius: 10px;
-  border: none;
-  margin-top: 40px;
-  font-size: 14px;
-  box-shadow: 0 1px 4px 0 rgb(255 255 255 / 44%);
-  animation: pulse 2s infinite;
-}
-.save-button {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  margin: 20px auto;
-  display: block;
-  background-color: transparent;
-  border-radius: 5px;
-  border: none;
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
-}
-.save-button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  animation: none;
 }
 @media(max-width: 425px){
 .title, .descriptions {
